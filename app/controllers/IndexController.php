@@ -20,6 +20,9 @@ class IndexController extends BaseController {
 	*	get long url and redirect
 	*/
 	public function redirectAction( $code ){
+		$r = new Base;
+		$id = $r->convertToBase10( $code );
 		
+		var_dump( $id );
 	}
 }

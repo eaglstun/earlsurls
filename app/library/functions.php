@@ -1,5 +1,9 @@
 <? 
 
+/*
+*
+*	@return string
+*/
 function randomlink(){
 	$urls = array( 
 					'http://en.wikipedia.org/wiki/URL_shortening#Criticism_and_problems',
