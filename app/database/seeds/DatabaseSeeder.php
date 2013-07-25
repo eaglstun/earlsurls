@@ -1,4 +1,4 @@
-<?php
+<?
 
 class DatabaseSeeder extends Seeder {
 
@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
+		// $this->call('UserTableSeeder' );
 	}
 
 }

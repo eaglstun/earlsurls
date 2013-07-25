@@ -1,0 +1,211 @@
+/* 
+RESET
+*/
+
+*{
+	color: #333;
+	font-family: "Helvetica", sans-serif;
+	font-size: 1em;
+	line-height: 1.4em;
+	margin: 0;
+	padding: 0;
+}
+
+body, html{
+	background-color: #dadada;
+	height: 100%;
+	width: 100%;
+}
+
+h1{
+	display: inline;
+	font-size: 5em;
+	line-height: .5em;
+	padding: 0;
+	text-shadow: 0px 0px 2px #633, 1px 1px 0px #aaa, 2px 2px 0px #999, 1px 2px 2px #006, 4px 2px 3px #888;
+}
+
+h1 a{
+	color: #333;
+	line-height: 1.4em;
+	text-decoration: none;
+}
+
+a:hover{
+	background-color: #333;
+	color: #dadada;
+}
+
+h1 a:hover{
+	text-shadow: 0px 0px 2px #000, 1px 1px 0px #666, 2px 2px 0px #333, 1px 2px 2px #003, 4px 2px 3px #000;
+}
+
+h2{
+	font-size: 2em;
+	padding: 0 0 0 .1em;
+}
+
+p{
+	padding: .4em 0 .8em .4em;
+	text-align: left;
+}
+
+label{
+	clear: both;
+	display: block;
+}
+
+label span{
+	float: left;
+	font-size: 3em;
+	padding: .5em;
+	width: 5em;
+}
+
+form{
+	border: 5px dashed #bbb;
+	padding: .5em;
+}
+
+form.admin{
+	border-width: 0;
+	font-size: .5em;
+}
+
+fieldset{
+	border-width: 0px;
+	padding: 1em;
+	margin: 0;
+	text-align: center;
+}
+
+blink{
+	display: block;
+	color: #f00;
+	font-size: 4em;
+	line-height: .75em;
+	margin: 0;
+	padding: .5em 0 0 0;
+	position: relative;
+	text-align: center;
+	text-shadow: 1px 1px 1px #909, 0px 0px 5px #fff, 0px 0px 10px #ff0;
+	width: 12em;
+	z-index: 200;
+}
+
+.pageFooter a{
+	padding: 0 1em 0 1em;
+}
+
+input{
+	color: #dadada;
+	text-shadow: -1px -1px 0px #222, -2px -2px 2px #222;
+	-moz-box-shadow: 0px 0px 2px #633, 1px 1px 0px #aaa, 2px 2px 0px #999, 1px 2px 2px #006, 5px 3px 3px #888;
+}
+
+input.input{
+	background-color: #333;
+	border: 5px solid #333;
+	display: inline;
+	font-size: 3em;
+	margin: 0 0 .5em 0;
+	padding: .5em;
+	width: 10em;
+}
+
+input.post{
+	width: 18em;
+}
+
+form.admin input.input{
+	width: 30em;
+}
+
+input.button{
+	background-color: #333;
+	border: 5px solid #333;
+	cursor: pointer;
+	display: inline;
+	font-size: 3em;
+	margin: 0 0 0 0;
+	padding: .5em;
+	-moz-border-radius: 3em / 5em;
+}
+
+input:focus, input:hover  {
+	background-color: #fff;
+	color: #333;
+	text-shadow: 2px 2px 1px #eee, 3px 3px 1px #dadada, 4px 2px 2px #ddd;
+}
+
+textarea{
+	background-color: #333;
+	border: 10px solid #333;
+	color: #fff;
+	font-family: monospace;
+	font-size: 3em;
+	height: 20em;
+	margin: 0 0 1em 0;
+	padding: .5em;
+	width: 37em;
+	-moz-box-shadow: 0px 0px 2px #633, 1px 1px 0px #aaa, 2px 2px 0px #999, 1px 2px 2px #006, 5px 3px 3px #888;
+}
+
+form.admin label{
+	display: block;
+	font-size: 2em;
+}
+
+ul.admin_menu{
+	float: right;
+}
+
+ul.admin_menu li{
+	display: block;
+	list-style-type: none;
+	
+}
+
+ul.admin_menu li a{
+	display: block;
+	margin: .25em;
+}
+
+img#earl{
+	position: absolute;
+	right: 0px;
+	top: -330px;
+}
+
+.pageFooter{
+	position: relative;
+	top: 0px;
+}
+/*
+implementation of CSS sticky footer
+by ryan fait
+http://ryanfait.com/sticky-footer/
+*/
+
+.pageContent{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: auto auto -50px auto;
+	min-width: 30em;
+	overflow: hidden;
+	padding: 0px;
+	width: 60em;
+}
+
+.pagePush{
+	height: 50px;
+}
+
+.pageFooter{
+	height: 50px;
+	line-height: 50px;
+	min-width: 60em;
+	text-align: center;
+	
+}
