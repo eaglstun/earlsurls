@@ -15,4 +15,11 @@ class IndexController extends BaseController {
 	public function postAction(){
 		return View::make( 'post' );
 	}
+	
+	/*
+	*	get long url and redirect
+	*/
+	public function redirectAction( $code ){
+		
+	}
 }

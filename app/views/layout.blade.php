@@ -21,7 +21,7 @@ EARLS URLS
 <body>
 	<div class="pageContent">
 		
-		<h1><a href="">Earls URLs .biz</a></h1>
+		<h1><a href="/">Earls URLs .biz</a></h1>
 		
 		@yield('content')
 		
