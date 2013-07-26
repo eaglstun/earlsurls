@@ -67,7 +67,7 @@ class Base{
 	*	@param
 	*	@param
 	*	@param
-	*	@return int
+	*	@return string - 32 bit system has limit too low
 	*/
 	private function baseToDec( $sNum, $iBase = 0, $iScale = 0 ){
 	
@@ -111,7 +111,7 @@ class Base{
 		
 		// Check to see if we are an integer or real number
 		if( mb_strpos($sNum, '.') !== false){
-			list ($sNum, $sReal) = explode( '.', $sNum, 2);
+			list( $sNum, $sReal) = explode( '.', $sNum, 2);
 			$sReal = '0.' . $sReal;
 		} else {
 			$sReal = '0';
@@ -147,7 +147,7 @@ class Base{
 			}
 		}
 	
-		return (int) $sResult;
+		return $sResult;
 	}
 	
 	/*
