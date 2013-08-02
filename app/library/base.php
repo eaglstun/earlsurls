@@ -56,7 +56,7 @@ class Base{
 			$oNum = $this->baseToDec( $iNum, $iBase, $iScale );
 		} else {
 			$oNum = $iNum;
-			$oNum = $this->base_dec2base($oNum, $oBase, $iScale);
+			$oNum = $this->decToBase( $oNum, $oBase, $iScale );
 		}
 	  	
 	  	return $oNum;
@@ -67,7 +67,7 @@ class Base{
 	*	@param
 	*	@param
 	*	@param
-	*	@return string - 32 bit system has limit too low
+	*	@return string - 32 bit system has limit too low for integer cast
 	*/
 	private function baseToDec( $sNum, $iBase = 0, $iScale = 0 ){
 	
@@ -147,6 +147,54 @@ class Base{
 			}
 		}
 	
+		return $sResult;
+	}
+	
+	/*
+	*	cope with base 2..62
+	*	@param
+	*	@param
+	*	@param
+	*	@return
+	*/
+	private function decToBase( $iNum, $iBase, $iScale = 0 ){ 
+		$sResult = ''; // Store the result
+		
+		$this->setBase( $iBase );
+		$sNum = (string) $iNum;
+		
+		if( mb_strpos($sNum, '.') !== FALSE ){
+			list ($sNum, $sReal) = explode( '.', $sNum, 2);
+			$sReal = '0.' . $sReal;
+		} else {
+			$sReal = '0';
+    	}
+    	
+		while( bccomp($sNum, 0, $iScale) != 0 ){ // still data to process
+			$sRem = bcmod( $sNum, $this->base ); // calc the remainder
+			$sNum = bcdiv( bcsub($sNum, $sRem, $iScale), $this->base, $iScale );
+			$sResult = $this->chars[$sRem] . $sResult;
+		}
+		
+		if( $sReal != '0' ){
+			$sResult .= '.';
+			$fraciScale = $iScale;
+			
+			while( $fraciScale-- && bccomp($sReal, 0, $iScale) != 0 ){ // still data to process
+				// multiple the float part with the base
+				$sReal = bcmul($sReal, $iBase, $iScale); 
+				$sFrac = 0;
+				
+				if( bccomp($sReal ,1, $iScale) > -1 ){
+					// get the intval
+					list($sFrac, $dummy) = explode( '.', $sReal, 2); 
+				}
+				
+				$sResult .= $sChars[$sFrac];
+				$sReal = bcsub($sReal, $sFrac, $iScale);
+			}
+		}
+  
 		return $sResult;
 	}
 	

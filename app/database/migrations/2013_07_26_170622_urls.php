@@ -12,9 +12,10 @@ class Urls extends Migration {
 	public function up(){
 		Schema::create('urls', function($table){
 	        $table->increments('id');
-	        $table->string('domain');
+	        $table->string('scheme');
+	        $table->string('host');
 	        $table->string('path');
-	        $table->string('query_vars');
+	        $table->string('query');
 	        $table->timestamp('added_on');
 	    });
 	}
